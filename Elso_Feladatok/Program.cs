@@ -19,9 +19,25 @@ namespace Elso_Feladatok
             }
         }
 
+        static int F02(int[] tomb)
+        {
+            int szamlalo = 0;
+            for (int i = 0; i < tomb.Length; i++)
+            {
+                if (tomb[i]%2 == 0)
+                {
+                    szamlalo++;
+                }
+            }
+            
+            return szamlalo;
+        }
+
         static void Main(string[] args)
         {
-            F01(new int[10]);
+            int[] tomb = new int[10];
+            F01(tomb);
+            Console.WriteLine(F02(tomb));
         }
     }
 }

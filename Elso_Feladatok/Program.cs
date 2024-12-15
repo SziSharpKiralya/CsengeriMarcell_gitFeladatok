@@ -47,6 +47,24 @@ namespace Elso_Feladatok
             return atlag/tomb.Length;
         }
 
+        static int[] F04(int[] tomb)
+        { 
+
+            int[] paratlan = new int[10];
+            for (int i = 0; i < tomb.Length; i++)
+            {
+                if (tomb[i] % 2 == 0)
+                {
+                    paratlan[i] = (tomb[i] +1);
+                }
+                else
+                {
+                    paratlan[i] = tomb[i];
+                }
+            }
+
+            return paratlan;
+        }
 
         static void Main(string[] args)
         {
@@ -54,6 +72,10 @@ namespace Elso_Feladatok
             F01(tomb);
             Console.WriteLine(F02(tomb));
             Console.WriteLine(F03(tomb));
+            for (int i = 0;i < F04(tomb).Length; i++)
+            {
+                Console.Write(F04(tomb)[i] + ",");
+            }
         }
     }
 }

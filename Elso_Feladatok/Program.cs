@@ -50,7 +50,7 @@ namespace Elso_Feladatok
         static int[] F04(int[] tomb)
         { 
 
-            int[] paratlan = new int[10];
+            int[] paratlan = new int[tomb.Length];
             for (int i = 0; i < tomb.Length; i++)
             {
                 if (tomb[i] % 2 == 0)
@@ -66,16 +66,29 @@ namespace Elso_Feladatok
             return paratlan;
         }
 
+        static void F05(int[] tomb)
+        {
+            Console.WriteLine("Ennyi db pozitív szám van a tömbben: " + F02(tomb));
+            Console.WriteLine("A tömb elemeinek átlaga: " + F03(tomb));
+            Console.Write("A tömbből alkotott páratlan számok: ");
+            foreach (int i in F04(tomb))
+            {
+                Console.Write(i + ", ");
+            }
+            Console.WriteLine();
+        }
+
         static void Main(string[] args)
         {
-            int[] tomb = new int[10];
-            F01(tomb);
-            Console.WriteLine(F02(tomb));
-            Console.WriteLine(F03(tomb));
-            for (int i = 0;i < F04(tomb).Length; i++)
-            {
-                Console.Write(F04(tomb)[i] + ",");
-            }
+            int[] szamok = new int[10];
+            F01(szamok);
+            F05(szamok);
+            //Console.WriteLine(F02(tomb));
+            //Console.WriteLine(F03(tomb));
+            //for (int i = 0;i < F04(tomb).Length; i++)
+            //{
+            //    Console.Write(F04(tomb)[i] + ",");
+            //}
         }
     }
 }

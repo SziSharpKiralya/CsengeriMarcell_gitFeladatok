@@ -33,11 +33,27 @@ namespace Elso_Feladatok
             return szamlalo;
         }
 
+        static double F03(int[] tomb)
+        {
+            double atlag = 0;
+            for (int i = 0; i < tomb.Length; i++)
+            {
+                if (tomb[i] % 2 == 0)
+                {
+                    atlag += tomb[i];
+                }
+            }
+
+            return atlag/tomb.Length;
+        }
+
+
         static void Main(string[] args)
         {
             int[] tomb = new int[10];
             F01(tomb);
             Console.WriteLine(F02(tomb));
+            Console.WriteLine(F03(tomb));
         }
     }
 }
